@@ -20,6 +20,19 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    
+    
+    @IBOutlet weak var textField: UITextField!
+
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?){
+        // segueから遷移先のResultViewControllerを取得する
+        let resultViewController:ResultViewController = segue.destinationViewController as! ResultViewController
+        resultViewController.userName = textField.text!
+    }
+    
+    @IBAction func unwind(segue: UIStoryboardSegue) {
+    }
 
 }
 
